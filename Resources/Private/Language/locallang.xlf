@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-17T21:51:05Z" product-name="hotp">
+		<header/>
+		<body>
+			<trans-unit id="hotp.title" resname="hotp.title">
+				<source>Counter-based one-time password</source>
+			</trans-unit>
+			<trans-unit id="hotp.description" resname="hotp.description">
+				<source>This provider allows to authenticate with a single-use passcode which is based on a constantly
+					synchronizing counter between your OTP application and TYPO3. Each code is only valid once.</source>
+			</trans-unit>
+			<trans-unit id="hotp.setupInstructions" resname="hotp.setupInstructions">
+				<source>The counter-based one-time password provider enables you to strengthen your accounts' security by requiring a six-digit code on every login.
+					This provider is based on a shared secret, which will be exchanged between your OTP application (or device) and TYPO3. Each code takes an increasing counter value into account and is only valid once.
+
+					Setting up:
+					1. Scan the QR-code or directly enter the shared secret in your application or device
+					2. Enter the generated six-digit code in the corresponding field
+					3. Add a specific name for this provider (optional)
+					4. Submit the form to activate the provider</source>
+			</trans-unit>
+			<trans-unit id="hotpInputLabel" resname="hotpInputLabel">
+				<source>Enter the six-digit code</source>
+			</trans-unit>
+			<trans-unit id="hotpInputHelp" resname="hotpInputLabel">
+				<source>This code should now be displayed on your device or in your application.</source>
+			</trans-unit>
+			<trans-unit id="locked" resname="locked">
+				<source>
+					The maximum attempts for this provider are exceeded. Please use another provider, reset your
+					password or contact your administrator.
+				</source>
+			</trans-unit>
+			<trans-unit id="edit.table.head" resname="edit.table.head">
+				<source>Provider information</source>
+			</trans-unit>
+			<trans-unit id="edit.table.name" resname="edit.table.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="edit.table.nameInputPlaceholder" resname="edit.table.nameInputPlaceholder">
+				<source>Enter a name</source>
+			</trans-unit>
+			<trans-unit id="edit.table.lastUsed" resname="edit.table.lastUsed">
+				<source>Last used</source>
+			</trans-unit>
+			<trans-unit id="edit.table.lastUsed.default" resname="edit.table.lastUsed.default">
+				<source>Never</source>
+			</trans-unit>
+			<trans-unit id="edit.table.lastUpdated" resname="edit.table.lastUpdated">
+				<source>Last updated</source>
+			</trans-unit>			<trans-unit id="edit.resync" resname="edit.resync">
+            <source>Resychronize with client</source>
+        </trans-unit>
+            <trans-unit id="edit.resync.description" resname="edit.resync.description">
+                <source>
+                    It can happen, that the server and the clients counter are out of sync. To resync them, please
+                    enter the current OTP shown on your device or in your application.
+                </source>
+            </trans-unit>
+            <trans-unit id="edit.resync.inputPlaceholder" resname="edit.resync.inputPlaceholder">
+                <source>Six-digit code</source>
+            </trans-unit>
+			<trans-unit id="setup.step.1" resname="setup.step.1">
+				<source>Step 1</source>
+			</trans-unit>
+			<trans-unit id="setup.step.1a" resname="setup.step.1a">
+				<source>Step 1a</source>
+			</trans-unit>
+			<trans-unit id="setup.step.1b" resname="setup.step.1b">
+				<source>Step 1b</source>
+			</trans-unit>
+			<trans-unit id="setup.step.2" resname="setup.step.2">
+				<source>Step 2</source>
+			</trans-unit>
+			<trans-unit id="setup.step.3" resname="setup.step.3">
+				<source>Step 3</source>
+			</trans-unit>
+			<trans-unit id="setup.qrCode.label" resname="setup.qrCode.label">
+				<source>Scan the displayed QR code</source>
+			</trans-unit>
+			<trans-unit id="setup.qrCode.help" resname="setup.qrCode.help">
+				<source>Scan this code with your OTP application (e.g. GoogleAuthenticator).</source>
+			</trans-unit>
+			<trans-unit id="setup.secret.label" resname="setup.secret.label">
+				<source>Copy the shared secret</source>
+			</trans-unit>
+			<trans-unit id="setup.secret.help" resname="setup.secret.help">
+				<source>You can also enter the shared secret manually in your OTP device or application.</source>
+			</trans-unit>
+			<trans-unit id="setup.name.label" resname="setup.name.label">
+				<source>Enter a name (optional)</source>
+			</trans-unit>
+			<trans-unit id="setup.name.help" resname="setup.name.help">
+				<source>Specify a custom name for this provider.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

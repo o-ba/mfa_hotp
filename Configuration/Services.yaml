@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Bo\Hotp\:
+    resource: '../Classes/*'
+
+  Bo\Hotp\Mfa\HotpProvider:
+    tags:
+      - name: mfa.provider
+        identifier: 'hotp'
+        title: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:hotp.title'
+        description: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:hotp.description'
+        setupInstructions: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:hotp.setupInstructions'
+        icon: 'tx-hotp-icon'
+        defaultProviderAllowed: true
+        after: 'totp,recovery-codes'
