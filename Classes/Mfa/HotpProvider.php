@@ -20,7 +20,7 @@ use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
 /**
- * MFA provider for time-based one-time password authentication
+ * MFA provider for hmac-based one-time password authentication
  *
  * @author Oliver Bartsch <bo@cedev.de>
  */
@@ -29,10 +29,12 @@ class HotpProvider implements MfaProviderInterface
     private const MAX_ATTEMPTS = 3;
 
     protected Context $context;
+    protected ResponseFactory $responseFactory;
 
-    public function __construct(Context $context)
+    public function __construct(Context $context, ResponseFactory $responseFactory)
     {
         $this->context = $context;
+        $this->responseFactory = $responseFactory;
     }
 
     /**
@@ -101,7 +103,7 @@ class HotpProvider implements MfaProviderInterface
                 $this->prepareAuthView($view, $propertyManager);
                 break;
         }
-        $response = GeneralUtility::makeInstance(ResponseFactory::class)->createResponse();
+        $response = $this->responseFactory->createResponse();
         $response->getBody()->write($view->assign('providerIdentifier', $propertyManager->getIdentifier())->render());
         return $response;
     }

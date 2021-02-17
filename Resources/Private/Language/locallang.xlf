@@ -49,9 +49,10 @@
 			</trans-unit>
 			<trans-unit id="edit.table.lastUpdated" resname="edit.table.lastUpdated">
 				<source>Last updated</source>
-			</trans-unit>			<trans-unit id="edit.resync" resname="edit.resync">
-            <source>Resychronize with client</source>
-        </trans-unit>
+			</trans-unit>
+            <trans-unit id="edit.resync" resname="edit.resync">
+                <source>Resychronize with client</source>
+            </trans-unit>
             <trans-unit id="edit.resync.description" resname="edit.resync.description">
                 <source>
                     It can happen, that the server and the clients counter are out of sync. To resync them, please

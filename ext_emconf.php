@@ -1,7 +1,7 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Hotp',
+    'title' => 'Hotp MFA provider',
     'description' => 'TYPO3 hmac-based one-time password provider',
     'category' => 'be',
     'author' => 'Oliver Bartsch',
