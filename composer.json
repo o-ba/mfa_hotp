@@ -24,7 +24,7 @@
 		}
 	},
 	"replace": {
-		"hotp": "self.version"
+		"typo3-ter/hotp": "self.version"
 	},
 	"autoload": {
 		"psr-4": {
