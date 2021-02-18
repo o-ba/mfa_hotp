@@ -47,10 +47,10 @@ class Hotp
     /**
      * Generate a one-time password for the given counter according to rfc4226
      *
-     * @param int|null $counter A counter according to rfc4226
+     * @param int $counter A counter according to rfc4226
      * @return string The generated HOTP
      */
-    public function generateHotp(int $counter = null): string
+    public function generateHotp(int $counter): string
     {
         // Generate a 8-byte counter value (C) from the given counter input
         $binary = [];
