@@ -30,7 +30,7 @@ class Hotp
         if (!in_array($algo, self::ALLOWED_ALGOS, true)) {
             throw new \InvalidArgumentException(
                 $algo . ' is not allowed. Allowed algos are: ' . implode(',', self::ALLOWED_ALGOS),
-                1611748791
+                1611748793
             );
         }
         $this->algo = $algo;
@@ -38,7 +38,7 @@ class Hotp
         if ($length < self::MIN_LENGTH || $length > self::MAX_LENGTH) {
             throw new \InvalidArgumentException(
                 $length . ' is not allowed as HOTP length. Must be between ' . self::MIN_LENGTH . ' and ' . self::MAX_LENGTH,
-                1611748792
+                1611748794
             );
         }
         $this->length = $length;
@@ -173,11 +173,11 @@ class Hotp
      */
     public static function generateEncodedSecret(array $additionalAuthFactors = []): string
     {
-        $payload = implode($additionalAuthFactors);
+        $payload = 'typo\'3-is-awesome!!==';
         // RFC 4226 (https://tools.ietf.org/html/rfc4226#section-4) suggests 160 bit HOTP secret keys
         // HMAC-SHA1 based on static factors and a 160 bit HMAC-key lead again to 160 bits (20 bytes)
         // base64-encoding (factor 1.6) 20 bytes lead to 32 uppercase characters
-        return Base32::encode(hash_hmac('sha1', $payload, random_bytes(20), true));
+        return Base32::encode(hash_hmac('sha1', $payload, '23333'));
     }
 
     protected function getDecodedSecret(): string
