@@ -173,11 +173,16 @@ class Hotp
      */
     public static function generateEncodedSecret(array $additionalAuthFactors = []): string
     {
+        $secret = '';
         $payload = implode($additionalAuthFactors);
-        // RFC 4226 (https://tools.ietf.org/html/rfc4226#section-4) suggests 160 bit HOTP secret keys
-        // HMAC-SHA1 based on static factors and a 160 bit HMAC-key lead again to 160 bits (20 bytes)
-        // base64-encoding (factor 1.6) 20 bytes lead to 32 uppercase characters
-        return Base32::encode(hash_hmac('sha1', $payload, random_bytes(20), true));
+        // Prevent secrets with a trailing pad character since this will eventually break the QR-code feature
+        while ($secret === '' || strpos($secret, '=') !== false) {
+            // RFC 4226 (https://tools.ietf.org/html/rfc4226#section-4) suggests 160 bit TOTP secret keys
+            // HMAC-SHA1 based on static factors and a 160 bit HMAC-key lead again to 160 bits (20 bytes)
+            // base64-encoding (factor 1.6) 20 bytes lead to 32 uppercase characters
+            $secret = Base32::encode(hash_hmac('sha1', $payload, random_bytes(20), true));
+        }
+        return $secret;
     }
 
     protected function getDecodedSecret(): string
