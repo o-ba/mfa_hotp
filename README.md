@@ -7,8 +7,8 @@ TYPO3, using the new MFA API, available since TYPO3 v11.1.
 
 You can install the extension via composer ``composer req o-ba/hotp`` or
 download the release packages
-[zip](https://github.com/o-ba/hotp/archive/0.0.1.zip),
-[tar.gz](https://github.com/o-ba/hotp/archive/0.0.1.tar.gz).
+[zip](https://github.com/o-ba/hotp/archive/0.0.2.zip),
+[tar.gz](https://github.com/o-ba/hotp/archive/0.0.2.tar.gz).
 
 ## Further TYPO3 extensions adding MFA providers
 
