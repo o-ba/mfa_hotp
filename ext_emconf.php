@@ -1,14 +1,14 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Hotp MFA provider',
+    'title' => 'HOTP MFA Provider',
     'description' => 'TYPO3 hmac-based one-time password provider',
     'category' => 'be',
     'author' => 'Oliver Bartsch',
     'author_email' => 'bo@cedev.de',
     'state' => 'beta',
     'clearCacheOnLoad' => true,
-    'version' => '0.1.1',
+    'version' => '0.1.2',
     'constraints' => [
         'depends' => [
             'typo3' => '11.1.0-11.1.99',
