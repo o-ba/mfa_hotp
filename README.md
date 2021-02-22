@@ -10,8 +10,8 @@ are to be expected.
 ## Installation
 
 You can install the extension via composer ``composer req o-ba/mfa-hotp``,
-download the release packages ([zip](https://github.com/o-ba/hotp/archive/0.0.2.zip),
-[tar.gz](https://github.com/o-ba/hotp/archive/0.0.2.tar.gz)) or via the
+download the release packages ([zip](https://github.com/o-ba/hotp/archive/0.1.0.zip),
+[tar.gz](https://github.com/o-ba/hotp/archive/0.1.0.tar.gz)) or via the
 [TYPO3 extension repository](https://extensions.typo3.org/extension/tailor_ext/).
 
 ## TYPO3 and multi-factor authentication
