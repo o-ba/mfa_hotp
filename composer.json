@@ -1,5 +1,5 @@
 {
-	"name": "o-ba/hotp",
+	"name": "o-ba/mfa-hotp",
 	"description": "TYPO3 hmac-based one-time password provider",
 	"type": "typo3-cms-extension",
 	"license": "GPL-3.0",
@@ -16,19 +16,26 @@
 		"christian-riesen/base32": "^1.5"
 	},
 	"require-dev": {
-		"roave/security-advisories": "dev-master"
+		"roave/security-advisories": "dev-master",
+		"typo3/tailor": "^1.2",
+        "typo3/coding-standards": "^0.2.0"
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "hotp"
+			"extension-key": "mfa_hotp"
 		}
 	},
 	"replace": {
-		"typo3-ter/hotp": "self.version"
+		"typo3-ter/mfa_hotp": "self.version"
 	},
 	"autoload": {
 		"psr-4": {
 			"Bo\\Hotp\\": "Classes/"
 		}
-	}
+	},
+    "scripts": {
+        "cs": [
+            "@php vendor/bin/php-cs-fixer fix --dry-run --diff --diff-format=udiff --config=vendor/typo3/coding-standards/templates/extension_php_cs.dist Classes/"
+        ]
+    }
 }
