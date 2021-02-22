@@ -11,9 +11,10 @@ services:
     tags:
       - name: mfa.provider
         identifier: 'hotp'
-        title: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:hotp.title'
-        description: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:hotp.description'
-        setupInstructions: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:hotp.setupInstructions'
+        title: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:hotp.title'
+        description: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:hotp.description'
+        setupInstructions: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:hotp.setupInstructions'
         icon: 'tx-hotp-icon'
         defaultProviderAllowed: true
-        after: 'totp,recovery-codes'
+        before: 'recovery-codes'
+        after: 'totp'

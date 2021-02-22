@@ -5,14 +5,14 @@
                 <thead>
                 <tr>
                     <th colspan="2">
-                        <f:translate key="LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.table.head"/>
+                        <f:translate key="LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.table.head"/>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>
-                        <f:translate key="LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.table.name"/>
+                        <f:translate key="LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.table.name"/>
                     </td>
                     <td>
                         <f:if condition="{name}">
@@ -20,26 +20,26 @@
                                 {name}
                             </f:then>
                             <f:else>
-                                <input type="text" id="name" name="name" value="" class="form-control" placeholder="{f:translate(key: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.table.nameInputPlaceholder')}"/>
+                                <input type="text" id="name" name="name" value="" class="form-control" placeholder="{f:translate(key: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.table.nameInputPlaceholder')}"/>
                             </f:else>
                         </f:if>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <f:translate key="LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.table.lastUsed"/>
+                        <f:translate key="LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.table.lastUsed"/>
                     </td>
                     <td>
                         <f:if condition="{lastUsed}">
                             <f:then>{lastUsed}</f:then>
-                            <f:else><f:translate key="LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.table.lastUsed.default"/></f:else>
+                            <f:else><f:translate key="LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.table.lastUsed.default"/></f:else>
                         </f:if>
                     </td>
                 </tr>
                 <f:if condition="{updated}">
                     <tr>
                         <td>
-                            <f:translate key="LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.table.lastUpdated"/>
+                            <f:translate key="LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.table.lastUpdated"/>
                         </td>
                         <td>
                             {updated}
@@ -54,11 +54,11 @@
 
 <div class="row mb-3">
     <div class="col-md-5">
-        <h3><f:translate key="LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.resync"/></h3>
-        <p><f:translate key="LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.resync.description"/></p>
+        <h3><f:translate key="LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.resync"/></h3>
+        <p><f:translate key="LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.resync.description"/></p>
         <div class=form-field-item">
             <div class="form-control-wrap">
-                <input type="text" id="hotp" name="hotp" value="" class="form-control" maxlength="6" minlength="6" pattern="[0-9]+" placeholder="{f:translate(key: 'LLL:EXT:hotp/Resources/Private/Language/locallang.xlf:edit.resync.inputPlaceholder')}"/>
+                <input type="text" id="hotp" name="hotp" value="" class="form-control" maxlength="6" minlength="6" pattern="[0-9]+" placeholder="{f:translate(key: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:edit.resync.inputPlaceholder')}"/>
             </div>
         </div>
     </div>

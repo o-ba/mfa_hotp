@@ -91,7 +91,7 @@ class HotpProvider implements MfaProviderInterface
         string $type
     ): ResponseInterface {
         $view = GeneralUtility::makeInstance(StandaloneView::class);
-        $view->setTemplateRootPaths(['EXT:hotp/Resources/Private/Templates/Mfa']);
+        $view->setTemplateRootPaths(['EXT:mfa_hotp/Resources/Private/Templates/Mfa']);
         switch ($type) {
             case MfaViewType::SETUP:
                 $this->prepareSetupView($view, $propertyManager);
@@ -117,6 +117,11 @@ class HotpProvider implements MfaProviderInterface
      */
     public function verify(ServerRequestInterface $request, MfaProviderPropertyManager $propertyManager): bool
     {
+        if (!$this->isActive($propertyManager) || $this->isLocked($propertyManager)) {
+            // Can not verify an inactive or locked provider
+            return false;
+        }
+
         $hotp = $this->getHotp($request);
         $secret = $propertyManager->getProperty('secret', '');
         $counter = $propertyManager->getProperty('counter');
@@ -153,8 +158,8 @@ class HotpProvider implements MfaProviderInterface
     public function activate(ServerRequestInterface $request, MfaProviderPropertyManager $propertyManager): bool
     {
         if ($this->isActive($propertyManager)) {
-            // Return since the user already activated this provider
-            return true;
+            // Can not activate an active provider
+            return false;
         }
 
         if (!$this->canProcess($request)) {
@@ -202,8 +207,8 @@ class HotpProvider implements MfaProviderInterface
      */
     public function unlock(ServerRequestInterface $request, MfaProviderPropertyManager $propertyManager): bool
     {
-        if (!$this->isLocked($propertyManager)) {
-            // Return since this provider is not locked
+        if (!$this->isActive($propertyManager) || !$this->isLocked($propertyManager)) {
+            // Can not unlock an inactive or not locked provider
             return false;
         }
 
@@ -223,7 +228,7 @@ class HotpProvider implements MfaProviderInterface
     public function deactivate(ServerRequestInterface $request, MfaProviderPropertyManager $propertyManager): bool
     {
         if (!$this->isActive($propertyManager)) {
-            // Return since this provider is not activated
+            // Can not deactivate an inactive provider
             return false;
         }
 
@@ -240,6 +245,11 @@ class HotpProvider implements MfaProviderInterface
      */
     public function update(ServerRequestInterface $request, MfaProviderPropertyManager $propertyManager): bool
     {
+        if (!$this->isActive($propertyManager) || $this->isLocked($propertyManager)) {
+            // Can not update an inactive or locked provider
+            return false;
+        }
+
         // Update the user specified name for this provider
         $name = (string)($request->getParsedBody()['name'] ?? '');
         if ($name !== '') {
