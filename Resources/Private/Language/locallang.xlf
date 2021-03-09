@@ -16,12 +16,12 @@
 
 					Setting up:
 					1. Scan the QR-code or directly enter the shared secret in your application or device
-					2. Enter the generated six-digit code in the corresponding field
-					3. Add a specific name for this provider (optional)
-					4. Submit the form to activate the provider</source>
+					2. Add a specific name for this provider (optional)
+                    3. Enter the generated six-digit code in the corresponding field
+                    4. Submit the form to activate the provider</source>
 			</trans-unit>
 			<trans-unit id="hotpInputLabel" resname="hotpInputLabel">
-				<source>Enter the six-digit code</source>
+				<source>Enter the generated six-digit code</source>
 			</trans-unit>
 			<trans-unit id="hotpInputHelp" resname="hotpInputLabel">
 				<source>This code should now be displayed on your device or in your application.</source>
@@ -60,7 +60,7 @@
                 </source>
             </trans-unit>
             <trans-unit id="edit.resync.inputPlaceholder" resname="edit.resync.inputPlaceholder">
-                <source>Six-digit code</source>
+                <source>Enter your current six-digit code</source>
             </trans-unit>
 			<trans-unit id="setup.step.1" resname="setup.step.1">
 				<source>Step 1</source>
@@ -87,13 +87,16 @@
 				<source>Copy the shared secret</source>
 			</trans-unit>
 			<trans-unit id="setup.secret.help" resname="setup.secret.help">
-				<source>You can also enter the shared secret manually in your OTP device or application.</source>
+				<source>You can also enter the shared secret manually in your OTP application or device.</source>
 			</trans-unit>
 			<trans-unit id="setup.name.label" resname="setup.name.label">
 				<source>Enter a name (optional)</source>
 			</trans-unit>
 			<trans-unit id="setup.name.help" resname="setup.name.help">
 				<source>Specify a custom name for this provider.</source>
+			</trans-unit>
+			<trans-unit id="auth.hotp.inputLabel" resname="auth.hotp.inputLabel">
+				<source>Enter the six-digit code</source>
 			</trans-unit>
 		</body>
 	</file>
