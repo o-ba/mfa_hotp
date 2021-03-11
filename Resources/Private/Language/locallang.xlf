@@ -18,7 +18,9 @@
 					1. Scan the QR-code or directly enter the shared secret in your application or device
 					2. Add a specific name for this provider (optional)
                     3. Enter the generated six-digit code in the corresponding field
-                    4. Submit the form to activate the provider</source>
+                    4. Submit the form to activate the provider
+
+                    Note: In case your application supports otpauth:// urls, you can retrieve the url by clicking on the info button next to the shared secret.</source>
 			</trans-unit>
 			<trans-unit id="hotpInputLabel" resname="hotpInputLabel">
 				<source>Enter the generated six-digit code</source>
@@ -95,6 +97,23 @@
 			<trans-unit id="setup.name.help" resname="setup.name.help">
 				<source>Specify a custom name for this provider.</source>
 			</trans-unit>
+            <trans-unit id="setup.hotpAuthUrlButton.title" resname="setup.hotpAuthUrlButton.title">
+                <source>Show authentication URL</source>
+            </trans-unit>
+            <trans-unit id="setup.hotpAuthUrlButton.title" resname="setup.hotpAuthUrlButton.title">
+                <source>Authentication URL</source>
+            </trans-unit>
+            <trans-unit id="setup.hotpAuthUrlButton.description" resname="setup.hotpAuthUrlButton.description">
+                <source>In case you are not able to scan the QR code, but your OTP application supports
+                    authentication URLs next to, or instead of plain shared secrets, you can copy and
+                    paste the URL shown below. The URL contains some information like the issuer (this site),
+                    the starting counter value and your email address or username. Most OTP applications will
+                    display this information next to the generated codes.
+                </source>
+            </trans-unit>
+            <trans-unit id="setup.hotpAuthUrlButton.ok" resname="setup.hotpAuthUrlButton.ok">
+                <source>OK</source>
+            </trans-unit>
 			<trans-unit id="auth.hotp.inputLabel" resname="auth.hotp.inputLabel">
 				<source>Enter the six-digit code</source>
 			</trans-unit>

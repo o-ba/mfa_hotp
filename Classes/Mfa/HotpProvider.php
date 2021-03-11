@@ -294,10 +294,15 @@ class HotpProvider implements MfaProviderInterface
         $userData = $propertyManager->getUser()->user ?? [];
         $secret = Hotp::generateEncodedSecret([(string)($userData['uid'] ?? ''), (string)($userData['username'] ?? '')]);
         $hotpInstance = GeneralUtility::makeInstance(Hotp::class, $secret, 0);
+        $hotpAuthUrl = $hotpInstance->getHotpAuthUrl(
+            (string)($GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] ?? 'TYPO3'),
+            (string)($userData['email'] ?? '') ?: (string)($userData['username'] ?? '')
+        );
         $view->setTemplate('Setup');
         $view->assignMultiple([
             'secret' => $secret,
-            'qrCode' => $this->getSvgQrCode($hotpInstance, $userData),
+            'hotpAuthUrl' => $hotpAuthUrl,
+            'qrCode' => $this->getSvgQrCode($hotpAuthUrl),
             // Generate hmac of the secret to prevent it from being changed in the setup from
             'checksum' => GeneralUtility::hmac($secret, 'hotp-setup')
         ]);
@@ -345,21 +350,16 @@ class HotpProvider implements MfaProviderInterface
     /**
      * Internal helper method for generating a svg QR-code for OTP applications
      *
-     * @param Hotp $hotp
-     * @param array $userData
+     * @param string content
      * @return string
      */
-    protected function getSvgQrCode(Hotp $hotp, array $userData): string
+    protected function getSvgQrCode(string $content): string
     {
         $qrCodeRenderer = new ImageRenderer(
             new RendererStyle(225, 4),
             new SvgImageBackEnd()
         );
 
-        $content = $hotp->getHotpAuthUrl(
-            (string)($GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] ?? 'TYPO3'),
-            (string)($userData['email'] ?? '') ?: (string)($userData['username'] ?? '')
-        );
         return (new Writer($qrCodeRenderer))->writeString($content);
     }
 
