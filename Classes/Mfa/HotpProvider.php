@@ -49,15 +49,16 @@ class HotpProvider implements MfaProviderInterface
     }
 
     /**
-     * Evaluate if the provider is activated by checking
-     * the active state from the provider properties.
+     * Evaluate if the provider is activated by checking the
+     * active state and the secret from the provider properties.
      *
      * @param MfaProviderPropertyManager $propertyManager
      * @return bool
      */
     public function isActive(MfaProviderPropertyManager $propertyManager): bool
     {
-        return (bool)$propertyManager->getProperty('active');
+        return (bool)$propertyManager->getProperty('active')
+            && $propertyManager->getProperty('secret', '') !== '';
     }
 
     /**
