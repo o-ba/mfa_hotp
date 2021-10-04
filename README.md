@@ -34,6 +34,11 @@ To use this provider:
 4. Submit the form to activate the MFA provider
 5. Alternatively also activate the built-in ``Recovery codes`` provider
 
+In the providers' editing view, it's also possible to initiate
+the counter resynchronization. This will be necessary, in case
+the local counter value (client side) does no longer match the
+expected counter value on the server side.
+
 ## TYPO3 and multi-factor authentication
 
 You can read more about the implementation in the official
