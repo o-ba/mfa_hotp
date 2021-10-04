@@ -6,12 +6,12 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'be',
     'author' => 'Oliver Bartsch',
     'author_email' => 'bo@cedev.de',
-    'state' => 'beta',
+    'state' => 'stable',
     'clearCacheOnLoad' => true,
-    'version' => '0.1.7',
+    'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.1.0-11.99.99',
+            'typo3' => '11.1.0-11.5.99',
             'php' => '7.4.0-8.0.99'
         ],
         'conflicts' => [],

@@ -11,7 +11,7 @@
 	],
 	"require": {
 		"php": "^7.4 || ^8.0",
-		"typo3/cms-core": "^11.1 || dev-master",
+		"typo3/cms-core": "^11.1",
 		"bacon/bacon-qr-code": "^2.0",
 		"christian-riesen/base32": "^1.6"
 	},
