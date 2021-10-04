@@ -5,10 +5,12 @@
 
 <f:if condition="!{isLocked}">
     <f:then>
-        <div class="form-field-item">
-            <div class="form-control-wrap">
-                <div class="form-control-holder">
-                    <input type="text" inputmode="numeric" id="hotp" class="form-control input-login" name="hotp" value="" autofocus="autofocus" autocomplete="one-time-code" required="required" maxlength="6" minlength="6" pattern="[0-9]+" aria-label="{f:translate(key: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:auth.hotp.inputLabel')}" placeholder="{f:translate(key: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:auth.hotp.inputLabel')}"/>
+        <div class="form-group">
+            <div class="form-field-item">
+                <div class="form-control-wrap">
+                    <div class="form-control-holder">
+                        <input type="text" inputmode="numeric" id="hotp" class="form-control input-login" name="hotp" value="" autofocus="autofocus" autocomplete="one-time-code" required="required" maxlength="6" minlength="6" pattern="[0-9]+" aria-label="{f:translate(key: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:auth.hotp.inputLabel')}" placeholder="{f:translate(key: 'LLL:EXT:mfa_hotp/Resources/Private/Language/locallang.xlf:auth.hotp.inputLabel')}"/>
+                    </div>
                 </div>
             </div>
         </div>
