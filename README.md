@@ -4,6 +4,8 @@ This extension adds the HOTP (hmac-based one-time password) MFA provider to
 TYPO3, using the new MFA API, available since TYPO3 v11.1. It can furthermore
 be used as an example extension on how to integrate a custom provider into TYPO3.
 
+The extension supports all TYPO3 versions >= 11.1 with PHP >= 7.4.
+
 **Important**: For better understanding, especially for editors, the provider
 is referred to as **Counter-based one-time password** in the TYPO3 backend.
 
