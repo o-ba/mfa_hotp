@@ -143,7 +143,7 @@ class HotpProvider implements MfaProviderInterface
         return $propertyManager->updateProperties([
             'counter' => ++$counter,
             'attempts' => 0,
-            'lastUsed' => $this->context->getPropertyFromAspect('date', 'timestamp')
+            'lastUsed' => $this->context->getPropertyFromAspect('date', 'timestamp'),
         ]);
     }
 
@@ -304,7 +304,7 @@ class HotpProvider implements MfaProviderInterface
             'hotpAuthUrl' => $hotpAuthUrl,
             'qrCode' => $this->getSvgQrCode($hotpAuthUrl),
             // Generate hmac of the secret to prevent it from being changed in the setup from
-            'checksum' => GeneralUtility::hmac($secret, 'hotp-setup')
+            'checksum' => GeneralUtility::hmac($secret, 'hotp-setup'),
         ]);
     }
 
